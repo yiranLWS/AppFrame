@@ -33,6 +33,7 @@ dependencies {
 
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 
 }
