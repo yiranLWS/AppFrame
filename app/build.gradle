@@ -16,6 +16,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -28,5 +34,23 @@ dependencies {
 
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+
+    implementation "com.android.support:design:$rootProject.ext.supportVersion"
+    implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    // ui module
+    api "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    api "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+    // use to bitmap blur and more
+    api "net.qiujuer.genius:graphics:$rootProject.ext.geniusVersion"
+    // ping/telnet/tracert/dns and run cmd
+    api "net.qiujuer.genius:kit-cmd:$rootProject.ext.geniusVersion"
+    // shuttle between ui-thread and child-thread
+    api "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
+    // calss reflect
+    api "net.qiujuer.genius:kit-reflect:$rootProject.ext.geniusVersion"
+
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 }
