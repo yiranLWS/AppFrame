@@ -28,15 +28,13 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
-
     implementation "com.android.support:design:$rootProject.ext.supportVersion"
     implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
@@ -50,11 +48,11 @@ dependencies {
     api "net.qiujuer.genius:kit-cmd:$rootProject.ext.geniusVersion"
     // shuttle between ui-thread and child-thread
     api 'net.qiujuer.genius:kit-handler:2.1.1'
-
     // calss reflect
     api 'net.qiujuer.genius:kit-reflect:2.1.1'
-
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
 
+
+    implementation project(':lang')
 }
