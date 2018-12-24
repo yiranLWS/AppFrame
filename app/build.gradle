@@ -35,10 +35,13 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
-
     implementation "com.android.support:design:$rootProject.ext.supportVersion"
-    implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    //圆形图片
+    implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+    //图片剪切
+    implementation "com.github.yalantis:ucrop:$rootProject.ext.ucropVersion"
+
     // ui module
     api "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
     api "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"

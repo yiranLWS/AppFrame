@@ -14,15 +14,15 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.Priority;
-import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.still.appframe.activitys.AccountActivity;
 import com.still.appframe.frags.main.ActiveFragment;
 import com.still.appframe.frags.main.ContactFragment;
 import com.still.appframe.frags.main.GroupFragment;
 import com.still.appframe.frags.main.MineFragment;
 import com.still.appframe.helper.NavHelper;
+import com.still.common.Contants;
 import com.still.common.app.Activity;
 import com.still.common.widget.PortraitView;
 
@@ -32,6 +32,7 @@ import net.qiujuer.genius.ui.widget.FloatActionButton;
 import java.util.Objects;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainActivity extends Activity implements BottomNavigationView.OnNavigationItemSelectedListener
 ,  NavHelper.OnTabChangedListener<Integer>{
@@ -85,15 +86,11 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
 
 
         mNavigation.setOnNavigationItemSelectedListener(this);
-        RequestOptions options = new RequestOptions()
-                .centerCrop()
-                .placeholder(R.mipmap.ic_launcher)
-                .error(R.mipmap.ic_launcher)
-                .priority(Priority.HIGH);
+
 
         Glide.with(this)
                 .load(R.drawable.bg_src_morning)
-                .apply(options)
+                .apply(Contants.Mainoptions)
                 .into(new ViewTarget<View,Drawable>(mLayAppbar) {
                     @Override
                     public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
@@ -112,6 +109,16 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
         Menu menu = mNavigation.getMenu();
         // 触发首次选中Home
         menu.performIdentifierAction(R.id.action_home, 0);
+    }
+
+    @OnClick(R.id.im_search)
+    void onSearchMenuClick() {
+
+    }
+
+    @OnClick(R.id.btn_action)
+    void onActionClick() {
+        AccountActivity.show(this);
     }
 
 
