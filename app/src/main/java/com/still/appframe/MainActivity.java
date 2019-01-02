@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.still.appframe.activitys.AccountActivity;
+import com.still.appframe.frags.assist.PermissionsFragment;
 import com.still.appframe.frags.main.ActiveFragment;
 import com.still.appframe.frags.main.ContactFragment;
 import com.still.appframe.frags.main.GroupFragment;
@@ -97,6 +98,8 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
                         this.view.setBackground(resource.getCurrent());
                     }
                 });
+
+        PermissionsFragment.haveAll(this,getSupportFragmentManager());
 
 
     }
