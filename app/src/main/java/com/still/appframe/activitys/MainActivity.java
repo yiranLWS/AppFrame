@@ -1,4 +1,4 @@
-package com.still.appframe;
+package com.still.appframe.activitys;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.still.appframe.activitys.AccountActivity;
+import com.still.appframe.R;
 import com.still.appframe.frags.assist.PermissionsFragment;
 import com.still.appframe.frags.main.ActiveFragment;
 import com.still.appframe.frags.main.ContactFragment;

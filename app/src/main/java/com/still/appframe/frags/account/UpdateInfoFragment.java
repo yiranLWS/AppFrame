@@ -13,6 +13,8 @@ import com.still.common.Contants;
 import com.still.common.app.Application;
 import com.still.common.app.Fragment;
 import com.still.common.widget.PortraitView;
+import com.still.factory.Factory;
+import com.still.factory.net.UploadHelper;
 import com.yalantis.ucrop.UCrop;
 
 
@@ -100,12 +102,12 @@ public class UpdateInfoFragment extends Fragment {
         final String localPath = uri.getPath();
         Log.e("TAG", "localPath:" + localPath);
 
-//        Factory.runOnAsync(new Runnable() {
-//            @Override
-//            public void run() {
-//                String url = UploadHelper.uploadPortrait(localPath);
-//                Log.e("TAG", "url:" + url);
-//            }
-//        });
+        Factory.runOnAsync(new Runnable() {
+            @Override
+            public void run() {
+                String url = UploadHelper.uploadPortrait(localPath);
+                Log.e("TAG", "url:" + url);
+            }
+        });
     }
 }
