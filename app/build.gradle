@@ -17,6 +17,10 @@ android {
                 GETUI_APP_SECRET: "jeOsmKLlS874MqUNot60h8",
                 PACKAGE_NAME    : applicationId
         ]
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+        }
     }
     buildTypes {
         release {
