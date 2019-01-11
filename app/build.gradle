@@ -9,6 +9,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //个推相关参数
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "oVDaupDlg97N97zO3bmDn4",
+                GETUI_APP_KEY   : "Jv0BDh3okjAZfaO1tx7h59",
+                GETUI_APP_SECRET: "jeOsmKLlS874MqUNot60h8",
+                PACKAGE_NAME    : applicationId
+        ]
     }
     buildTypes {
         release {
@@ -44,6 +52,8 @@ dependencies {
     //图片剪切
     implementation "com.github.yalantis:ucrop:$rootProject.ext.ucropVersion"
     implementation "pub.devrel:easypermissions:$rootProject.ext.easyPMVersion"
+    // 个推
+    implementation "com.getui:sdk:$rootProject.ext.getuiVersion"
 
     // ui module
     api "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
@@ -57,6 +67,5 @@ dependencies {
     // calss reflect
     api "net.qiujuer.genius:kit-reflect:$rootProject.ext.geniusVersion"
 
-    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 }

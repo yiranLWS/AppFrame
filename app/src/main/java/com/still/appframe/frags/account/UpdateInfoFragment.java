@@ -92,9 +92,9 @@ public class UpdateInfoFragment extends Fragment {
      */
     private void loadPortrait(Uri uri) {
         Glide.with(this)
-                .asBitmap()
                 .load(uri)
-                .apply(Contants.Accountoptions)
+                .asBitmap()
+                .centerCrop()
                 .into(mPortrait);
 
 

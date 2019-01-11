@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.still.common.Contants;
 import com.still.common.R;
 import com.still.common.widget.recycler.RecyclerAdapter;
@@ -298,7 +300,10 @@ public class GalleryView extends RecyclerView {
         protected void onBind(Image image) {
             Glide.with(getContext())
                     .load(image.path) // 加载路径
-                    .apply(Contants.Galleryoptions)
+                    .centerCrop()
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .placeholder(R.color.grey_200)
+                    .priority(Priority.HIGH)
                     .into(mPic);
 
             mShade.setVisibility(image.isSelect ? VISIBLE : INVISIBLE);

@@ -2,9 +2,7 @@ package com.still.appframe.activitys;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,8 +12,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
-import com.bumptech.glide.request.transition.Transition;
 import com.still.appframe.R;
 import com.still.appframe.frags.assist.PermissionsFragment;
 import com.still.appframe.frags.main.ActiveFragment;
@@ -23,7 +22,6 @@ import com.still.appframe.frags.main.ContactFragment;
 import com.still.appframe.frags.main.GroupFragment;
 import com.still.appframe.frags.main.MineFragment;
 import com.still.appframe.helper.NavHelper;
-import com.still.common.Contants;
 import com.still.common.app.Activity;
 import com.still.common.widget.PortraitView;
 
@@ -91,10 +89,10 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
 
         Glide.with(this)
                 .load(R.drawable.bg_src_morning)
-                .apply(Contants.Mainoptions)
-                .into(new ViewTarget<View,Drawable>(mLayAppbar) {
+                .centerCrop()
+                .into(new ViewTarget<View, GlideDrawable>(mLayAppbar) {
                     @Override
-                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                    public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
                         this.view.setBackground(resource.getCurrent());
                     }
                 });

@@ -33,4 +33,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${rootProject.ext.dbflowVersion}"
+    implementation "com.github.Raizlabs.DBFlow:dbflow-core:${rootProject.ext.dbflowVersion}"
+    implementation "com.github.Raizlabs.DBFlow:dbflow:${rootProject.ext.dbflowVersion}"
+
 }
