@@ -38,5 +38,7 @@ public class App extends Application {
 //        handler.sendEmptyMessageDelayed(0,1500);
         PushManager.getInstance().initialize(getApplicationContext(), DemoPushService.class);
     }
+
+
 }
 

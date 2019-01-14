@@ -2,6 +2,7 @@ package com.still.appframe.activitys;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
@@ -24,6 +25,7 @@ import com.still.appframe.frags.main.MineFragment;
 import com.still.appframe.helper.NavHelper;
 import com.still.common.app.Activity;
 import com.still.common.widget.PortraitView;
+import com.still.factory.persistence.Account;
 
 import net.qiujuer.genius.ui.Ui;
 import net.qiujuer.genius.ui.widget.FloatActionButton;
@@ -64,6 +66,17 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
      */
     public static void show(Context context) {
         context.startActivity(new Intent(context, MainActivity.class));
+    }
+
+    @Override
+    protected boolean initArgs(Bundle bundle) {
+        if(Account.isComplete()) {
+            // 判断用户信息是否完全，完全则走正常流程
+            return super.initArgs(bundle);
+        }else{
+            UserActivity.show(this);
+            return false;
+        }
     }
 
     @Override

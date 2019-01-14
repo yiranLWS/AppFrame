@@ -12,7 +12,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.still.appframe.R;
-import com.still.appframe.frags.account.UpdateInfoFragment;
+import com.still.appframe.frags.user.UpdateInfoFragment;
 import com.still.common.app.Activity;
 import com.still.common.app.Fragment;
 
