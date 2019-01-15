@@ -16,9 +16,10 @@
     <!-- 录音权限 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
-    <!-- iBeancon功能所需权限 -->;
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- iBeancon功能所需权限 -->
+    ;
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <!-- 个推3.0电子围栏功能所需权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -34,7 +35,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <!--个推的广播注册-->
+        <!-- 个推的广播注册 -->
         <receiver
             android:name=".MessageReceiver"
             android:enabled="true"
@@ -46,15 +47,14 @@
         </receiver>
 
         <service
-            android:name="com.still.appframe.DemoPushService"
+            android:name=".DemoPushService"
             android:exported="true"
             android:label="PushService"
-            android:process=":pushservice">
-        </service>
-
+            android:process=":pushservice"></service>
 
         <activity
             android:name=".LaunchActivity"
+            android:label="@string/title_activity_launch"
             android:theme="@style/AppTheme.TransStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,6 +65,7 @@
         <activity
             android:name=".activitys.MainActivity"
             android:screenOrientation="portrait"
+            android:label="@string/title_activity_launch"
             android:theme="@style/AppTheme.Main" />
         <activity
             android:name=".activitys.AccountActivity"
@@ -74,9 +75,15 @@
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activitys.UserActivity"
+        <activity
+            android:name=".activitys.UserActivity"
+            android:label="@string/title_activity_user"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Account"
+            android:theme="@style/AppTheme.Account" />
+        <activity android:name=".activitys.SearchActivity"
+            android:label="@string/title_search"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransStatusBar"
             ></activity>
     </application>
 
