@@ -125,12 +125,12 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
         menu.performIdentifierAction(R.id.action_home, 0);
 
         // 初始化头像加载
-//        mPortrait.setup(Glide.with(this), Account.getUser());
+        mPortrait.setup(Glide.with(this), Account.getUser());
     }
 
     @OnClick(R.id.im_portrait)
     void onPortraitClick() {
-//        PersonalActivity.show(this, Account.getUserId());
+        PersonalActivity.show(this, Account.getUserId());
     }
 
     @OnClick(R.id.im_search)

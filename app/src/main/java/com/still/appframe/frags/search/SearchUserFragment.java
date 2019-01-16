@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.still.appframe.R;
+import com.still.appframe.activitys.PersonalActivity;
 import com.still.appframe.activitys.SearchActivity;
 import com.still.common.app.PresenterFragment;
 import com.still.common.widget.EmptyView;
@@ -136,7 +137,7 @@ public class SearchUserFragment extends PresenterFragment<SearchContract.Present
         @OnClick(R.id.im_portrait)
         void onPortraitClick() {
             // 显示信息
-//            PersonalActivity.show(getContext(), mData.getId());
+            PersonalActivity.show(getContext(), mData.getId());
         }
 
         @OnClick(R.id.im_follow)
