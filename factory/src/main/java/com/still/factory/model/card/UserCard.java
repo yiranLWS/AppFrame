@@ -1,10 +1,11 @@
 package com.still.factory.model.card;
 
+import com.still.factory.model.Author;
 import com.still.factory.model.db.User;
 
 import java.util.Date;
 
-public class UserCard {
+public class UserCard implements Author{
     private String id;
     private String name;
     private String phone;

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.still.appframe.R;
 import com.still.appframe.activitys.SearchActivity;
 import com.still.common.app.PresenterFragment;
@@ -127,7 +128,7 @@ public class SearchUserFragment extends PresenterFragment<SearchContract.Present
 
         @Override
         protected void onBind(UserCard userCard) {
-//            mPortraitView.setup(Glide.with(SearchUserFragment.this), userCard);
+            mPortraitView.setup(Glide.with(SearchUserFragment.this), userCard);
             mName.setText(userCard.getName());
             mFollow.setEnabled(!userCard.isFollow());
         }

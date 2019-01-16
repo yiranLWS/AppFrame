@@ -16,6 +16,10 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+/**
+ * @author qiujuer Email:qiujuer@live.cn
+ * @version 1.0.0
+ */
 @SuppressWarnings({"unchecked", "unused"})
 public abstract class RecyclerAdapter<Data>
         extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder<Data>>
@@ -120,6 +124,15 @@ public abstract class RecyclerAdapter<Data>
     @Override
     public int getItemCount() {
         return mDataList.size();
+    }
+
+    /**
+     * 返回整个集合
+     *
+     * @return List<Data>
+     */
+    public List<Data> getItems() {
+        return mDataList;
     }
 
     /**
