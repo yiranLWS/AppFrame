@@ -28,6 +28,9 @@ import pub.devrel.easypermissions.EasyPermissions;
  */
 public class PermissionsFragment extends BottomSheetDialogFragment
         implements EasyPermissions.PermissionCallbacks {
+
+    //activity跳转回调
+    public  static startActivity startActivity;
     // 权限回调的标示
     private static final int RC = 0x0100;
 
@@ -91,6 +94,14 @@ public class PermissionsFragment extends BottomSheetDialogFragment
 
         root.findViewById(R.id.im_state_permission_record_audio)
                 .setVisibility(haveRecordAudioPerm(context) ? View.VISIBLE : View.GONE);
+
+        if(haveNetworkPerm(context)&&haveReadPerm(context)
+                &&haveWritePerm(context)&&haveRecordAudioPerm(context)){
+            if(startActivity != null){
+                startActivity.startActivity();
+            }
+        }
+
     }
 
     /**
@@ -172,6 +183,7 @@ public class PermissionsFragment extends BottomSheetDialogFragment
      * @return 是否有权限
      */
     public static boolean haveAll(Context context, FragmentManager manager) {
+
         // 检查是否具有所有的权限
         boolean haveAll = haveNetworkPerm(context)
                 && haveReadPerm(context)
@@ -182,7 +194,7 @@ public class PermissionsFragment extends BottomSheetDialogFragment
         if (!haveAll) {
             show(manager);
         }
-
+        startActivity = (startActivity)context;
         return haveAll;
     }
 
@@ -236,5 +248,9 @@ public class PermissionsFragment extends BottomSheetDialogFragment
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         // 传递对应的参数，并且告知接收权限的处理者是我自己
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    public interface  startActivity{
+        void startActivity();
     }
 }

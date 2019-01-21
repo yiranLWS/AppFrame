@@ -20,7 +20,7 @@ import com.still.factory.persistence.Account;
 import net.qiujuer.genius.res.Resource;
 import net.qiujuer.genius.ui.compat.UiCompat;
 
-public class LaunchActivity extends Activity {
+public class LaunchActivity extends Activity implements PermissionsFragment.startActivity{
     // Drawable
     private ColorDrawable mBgDrawable;
 
@@ -159,4 +159,16 @@ public class LaunchActivity extends Activity {
             return object.mBgDrawable.getColor();
         }
     };
+
+
+    @Override
+    public void startActivity() {
+        // 检查跳转到主页还是登录
+        if (Account.isLogin()) {
+            MainActivity.show(this);
+        } else {
+            AccountActivity.show(this);
+        }
+        finish();
+    }
 }

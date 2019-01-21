@@ -109,10 +109,6 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
                         this.view.setBackground(resource.getCurrent());
                     }
                 });
-
-        PermissionsFragment.haveAll(this,getSupportFragmentManager());
-
-
     }
 
     @Override
