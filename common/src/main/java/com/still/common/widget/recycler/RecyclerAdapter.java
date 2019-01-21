@@ -191,6 +191,17 @@ public abstract class RecyclerAdapter<Data>
         mDataList.addAll(dataList);
         notifyDataSetChanged();
     }
+    /**
+     * 替换为一个新的集合，其中包括了清空
+     *
+     * @param dataList 一个新的集合
+     */
+    public void replace_diff(Collection<Data> dataList) {
+        mDataList.clear();
+        if (dataList == null || dataList.size() == 0)
+            return;
+        mDataList.addAll(dataList);
+    }
 
     @Override
     public void update(Data data, ViewHolder<Data> holder) {

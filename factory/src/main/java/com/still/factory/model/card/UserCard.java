@@ -1,11 +1,17 @@
 package com.still.factory.model.card;
 
+
 import com.still.factory.model.Author;
 import com.still.factory.model.db.User;
 
 import java.util.Date;
 
-public class UserCard implements Author{
+/**
+ * 用户卡片，用于接收服务器返回
+ * @author qiujuer Email:qiujuer@live.cn
+ * @version 1.0.0
+ */
+public class UserCard implements Author {
     private String id;
     private String name;
     private String phone;
