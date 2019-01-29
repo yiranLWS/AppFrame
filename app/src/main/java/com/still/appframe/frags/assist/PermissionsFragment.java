@@ -29,8 +29,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class PermissionsFragment extends BottomSheetDialogFragment
         implements EasyPermissions.PermissionCallbacks {
 
-    //activity跳转回调
-    public  static startActivity startActivity;
+//    public  static StartListener listener1;
     // 权限回调的标示
     private static final int RC = 0x0100;
 
@@ -94,14 +93,6 @@ public class PermissionsFragment extends BottomSheetDialogFragment
 
         root.findViewById(R.id.im_state_permission_record_audio)
                 .setVisibility(haveRecordAudioPerm(context) ? View.VISIBLE : View.GONE);
-
-        if(haveNetworkPerm(context)&&haveReadPerm(context)
-                &&haveWritePerm(context)&&haveRecordAudioPerm(context)){
-            if(startActivity != null){
-                startActivity.startActivity();
-            }
-        }
-
     }
 
     /**
@@ -182,8 +173,8 @@ public class PermissionsFragment extends BottomSheetDialogFragment
      * @param manager FragmentManager
      * @return 是否有权限
      */
-    public static boolean haveAll(Context context, FragmentManager manager) {
-
+    public static boolean haveAll(Context context, FragmentManager manager,StartListener listener) {
+//        listener1 = listener;
         // 检查是否具有所有的权限
         boolean haveAll = haveNetworkPerm(context)
                 && haveReadPerm(context)
@@ -194,7 +185,7 @@ public class PermissionsFragment extends BottomSheetDialogFragment
         if (!haveAll) {
             show(manager);
         }
-        startActivity = (startActivity)context;
+
         return haveAll;
     }
 
@@ -217,6 +208,9 @@ public class PermissionsFragment extends BottomSheetDialogFragment
             Application.showToast(R.string.label_permission_ok);
             // Fragment 中调用getView得到跟布局，前提是在onCreateView方法之后
             refreshState(getView());
+//            if(listener1 != null){
+//                listener1.startAvtivity();
+//            }
         } else {
             EasyPermissions.requestPermissions(this, getString(R.string.title_assist_permissions),
                     RC, perms);
@@ -250,7 +244,7 @@ public class PermissionsFragment extends BottomSheetDialogFragment
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
-    public interface  startActivity{
-        void startActivity();
+    public  interface StartListener{
+        void startAvtivity();
     }
 }

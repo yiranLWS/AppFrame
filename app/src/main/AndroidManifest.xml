@@ -84,7 +84,11 @@
             android:label="@string/title_search"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.TransStatusBar" />
-        <activity android:name=".activitys.MessageActivity" />
+        <activity android:name=".activitys.MessageActivity"
+            android:label="@string/title_activity_message"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Message"
+            />
         <activity android:name=".activitys.PersonalActivity"
             android:label="@string/title_activity_personal"
             android:screenOrientation="portrait"

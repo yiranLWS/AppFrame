@@ -20,7 +20,7 @@ import com.still.factory.persistence.Account;
 import net.qiujuer.genius.res.Resource;
 import net.qiujuer.genius.ui.compat.UiCompat;
 
-public class LaunchActivity extends Activity implements PermissionsFragment.startActivity{
+public class LaunchActivity extends Activity implements PermissionsFragment.StartListener{
     // Drawable
     private ColorDrawable mBgDrawable;
 
@@ -109,7 +109,7 @@ public class LaunchActivity extends Activity implements PermissionsFragment.star
      */
     private void reallySkip() {
         // 权限检测，跳转
-        if (PermissionsFragment.haveAll(this, getSupportFragmentManager())) {
+        if (PermissionsFragment.haveAll(this, getSupportFragmentManager(),this)) {
             // 检查跳转到主页还是登录
             if (Account.isLogin()) {
                 MainActivity.show(this);
@@ -160,9 +160,8 @@ public class LaunchActivity extends Activity implements PermissionsFragment.star
         }
     };
 
-
     @Override
-    public void startActivity() {
+    public void startAvtivity() {
         // 检查跳转到主页还是登录
         if (Account.isLogin()) {
             MainActivity.show(this);
